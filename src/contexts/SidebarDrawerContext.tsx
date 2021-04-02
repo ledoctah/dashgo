@@ -17,7 +17,6 @@ export function SidebarDrawerProvider({
   const router = useRouter();
 
   useEffect(() => {
-    console.log('fecgou');
     disclosure.onClose();
   }, [router.asPath]);
 
