@@ -28,8 +28,27 @@ import { useUsers } from '../../services/hooks/useUsers';
 import { queryClient } from '../../services/queryClient';
 import { api } from '../../services/api';
 
+// Add in case of SEVER SIDE RENDERING
+
+// type User = {
+//   id: string;
+//   name: string;
+//   email: string;
+//   createdAt: string;
+// };
+
+// interface UsersProps {
+//   users: User[];
+//   totalCount: number;
+// }
+
 export default function UserList(): JSX.Element {
   const [page, setPage] = useState(1);
+
+  // Add in case of SERVER SIDE RENDERING
+  /* const { data, isLoading, isFetching, error } = useUsers(page, {
+    initialData: { users, totalCount },
+  }); */
 
   const { data, isLoading, isFetching, error } = useUsers(page);
 
@@ -144,3 +163,16 @@ export default function UserList(): JSX.Element {
     </Box>
   );
 }
+
+// Add in case of SERVER SIDE RENDERING
+
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const { users, totalCount } = await getUsers(1);
+
+//   return {
+//     props: {
+//       users,
+//       totalCount,
+//     },
+//   };
+// };
