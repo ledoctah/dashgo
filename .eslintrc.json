@@ -33,6 +33,7 @@
   "rules": {
     "react/no-unused-prop-types": "off",
     "camelcase": "off",
+    "func-names": "off",
     "import/no-duplicates": "off",
     "import/no-extraneous-dependencies": "off",
     "react/jsx-props-no-spreading": "off",
