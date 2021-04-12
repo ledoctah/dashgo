@@ -28,7 +28,7 @@ export function makeServer(): Server {
     },
 
     seeds(createdServer) {
-      createdServer.createList('user', 10);
+      createdServer.createList('user', 200);
     },
 
     routes() {
